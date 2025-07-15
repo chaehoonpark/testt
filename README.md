@@ -64,3 +64,4 @@ dependencies {
 ```
 
 이제 IDE에서 Gradle 설정을 새로고침하면, `common`과 `jpa` 모듈의 모든 라이브러리를 여러분의 메인 프로젝트에서 바로 사용할 수 있습니다.
+# testt

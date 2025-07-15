@@ -17,17 +17,21 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.example.entity.BaseTimeEntity;
+import org.hiring.api.entity.enums.CityEnum;
+import org.hiring.api.entity.enums.DistrictEnum;
+import org.hiring.api.entity.enums.EducationLevel;
+import org.hiring.api.entity.enums.EmploymentType;
+import org.hiring.api.entity.enums.ExperienceLevel;
 
 @Entity
 @Getter
 @Table(name = "job")
 @NoArgsConstructor(access = PROTECTED)
 @AllArgsConstructor(access = PRIVATE)
-public class JobJpaEntity extends BaseTimeEntity {
+public class Job extends BaseTimeEntity {
 
     @Id
     @Column(name = "job_id")
