@@ -1,4 +1,4 @@
-package org.hiring.api.entity;
+package org.hiring.api.entity.enums;
 
 public enum ExperienceLevel {
     NEWCOMER,    // 신입

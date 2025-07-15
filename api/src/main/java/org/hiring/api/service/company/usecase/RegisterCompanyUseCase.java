@@ -1,5 +1,8 @@
 package org.hiring.api.service.company.usecase;
 
-public interface CreateCompanyUseCase {
+import org.hiring.api.domain.Company;
+import org.hiring.api.service.company.RegisterCompanyServiceRequest;
 
+public interface RegisterCompanyUseCase {
+    void registerCompany(RegisterCompanyServiceRequest request);
 }

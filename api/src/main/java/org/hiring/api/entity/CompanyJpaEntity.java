@@ -19,7 +19,6 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.example.entity.BaseTimeEntity;
-import org.springframework.boot.autoconfigure.batch.BatchProperties.Job;
 
 @Entity
 @Getter
@@ -40,29 +39,29 @@ public class CompanyJpaEntity extends BaseTimeEntity {
     private String industry;
 
     @Lob
-    @Column(name = "description")
+    @Column(name = "description", nullable = false)
     private String description;
 
-    @Column(name = "employee_count")
+    @Column(name = "employee_count", nullable = false)
     private String employeeCount;
 
-    @Column(name = "founded_year")
+    @Column(name = "founded_year", nullable = false)
     private Integer foundedYear;
 
-    @Column(name = "logo_url", length = 255)
+    @Column(name = "logo_url", length = 255, nullable = false)
     private String logoUrl;
 
-    @Column(name = "website_url", length = 255)
+    @Column(name = "website_url", length = 255, nullable = false)
     private String websiteUrl;
 
-    @Column(name = "address", length = 255)
+    @Column(name = "address", length = 255, nullable = false)
     private String address;
 
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Job> jobs = new ArrayList<>();
+    private List<JobJpaEntity> jobJpaEntities = new ArrayList<>();
 
     @Builder
-    public CompanyJpaEntity(String name, String industry, String description, String employeeCount, Integer foundedYear, String logoUrl, String websiteUrl, String address, List<Job> jobs) {
+    public CompanyJpaEntity(String name, String industry, String description, String employeeCount, Integer foundedYear, String logoUrl, String websiteUrl, String address, List<JobJpaEntity> jobJpaEntities) {
         this.name = name;
         this.industry = industry;
         this.description = description;
@@ -71,6 +70,6 @@ public class CompanyJpaEntity extends BaseTimeEntity {
         this.logoUrl = logoUrl;
         this.websiteUrl = websiteUrl;
         this.address = address;
-        this.jobs = jobs;
+        this.jobJpaEntities = jobJpaEntities;
     }
 }

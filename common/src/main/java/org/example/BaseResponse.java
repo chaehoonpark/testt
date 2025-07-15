@@ -13,7 +13,7 @@ public class BaseResponse<T> {
     private final ErrorResponse error;
 
     // 성공 응답 (데이터 포함)
-    public static <T> BaseResponse<T> success(T data) {
+    public static <T> BaseResponse<T> success(final T data) {
         return new BaseResponse<>(true, data, null);
     }
 

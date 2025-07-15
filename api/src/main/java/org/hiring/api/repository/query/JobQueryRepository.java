@@ -1,4 +1,9 @@
 package org.hiring.api.repository.query;
 
-public class JobQueryRepository {
+import java.util.List;
+import org.hiring.api.entity.JobJpaEntity;
+
+public interface JobQueryRepository {
+
+    List<JobJpaEntity> loadJobs(JobSearchCondition condition);
 }

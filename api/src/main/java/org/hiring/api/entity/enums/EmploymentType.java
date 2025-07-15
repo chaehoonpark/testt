@@ -1,4 +1,4 @@
-package org.hiring.api.entity;
+package org.hiring.api.entity.enums;
 
 public enum EmploymentType {
     FULL_TIME,  // 정규직

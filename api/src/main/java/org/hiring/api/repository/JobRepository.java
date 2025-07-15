@@ -1,8 +1,10 @@
 package org.hiring.api.repository;
 
-import org.springframework.boot.autoconfigure.batch.BatchProperties.Job;
+import org.hiring.api.entity.JobJpaEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface JobRepository extends JpaRepository<Job, Long> {
+@Repository
+public interface JobRepository extends JpaRepository<JobJpaEntity, Long> {
 
 }

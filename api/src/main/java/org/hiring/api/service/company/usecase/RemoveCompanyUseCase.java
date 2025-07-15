@@ -1,5 +1,9 @@
 package org.hiring.api.service.company.usecase;
 
-public interface DeleteCompanyUseCase {
 
+import org.hiring.api.service.company.RemoveCompanyServiceRequest;
+
+public interface RemoveCompanyUseCase {
+
+    void removeCompany(RemoveCompanyServiceRequest request);
 }

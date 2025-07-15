@@ -1,4 +1,11 @@
 package org.hiring.api.mapper;
 
-public interface CompnayPostingMapper {
+import org.hiring.api.domain.Company;
+import org.hiring.api.entity.CompanyJpaEntity;
+import org.mapstruct.Mapper;
+
+@Mapper(componentModel = "spring")
+public interface CompanyPostingMapper {
+
+    Company toModel(CompanyJpaEntity entity);
 }

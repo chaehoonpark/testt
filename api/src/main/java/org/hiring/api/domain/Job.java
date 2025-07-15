@@ -7,7 +7,7 @@ import org.hiring.api.entity.enums.EducationLevel;
 import org.hiring.api.entity.enums.EmploymentType;
 import org.hiring.api.entity.enums.ExperienceLevel;
 
-public record JobPosting(
+public record Job(
     Long id,
     Long companyId,         // 어느 회사 소속인지 ID로 관리
     String companyName,     // 회사 이름도 함께 보여주면 편리

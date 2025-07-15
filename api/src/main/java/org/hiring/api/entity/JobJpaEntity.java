@@ -31,7 +31,7 @@ import org.hiring.api.entity.enums.ExperienceLevel;
 @Table(name = "job")
 @NoArgsConstructor(access = PROTECTED)
 @AllArgsConstructor(access = PRIVATE)
-public class Job extends BaseTimeEntity {
+public class JobJpaEntity extends BaseTimeEntity {
 
     @Id
     @Column(name = "job_id")

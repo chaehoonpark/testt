@@ -1,4 +1,7 @@
 package org.hiring.api.service.company;
 
-public record RemoveCompanyServiceRequest() {
+public record RemoveCompanyServiceRequest(
+    Long companyId
+) {
+
 }

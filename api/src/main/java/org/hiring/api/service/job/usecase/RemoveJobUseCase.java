@@ -1,5 +1,8 @@
 package org.hiring.api.service.job.usecase;
 
-public interface DeleteJobUseCase {
+import org.hiring.api.service.job.RemoveJobServiceRequest;
 
+public interface RemoveJobUseCase {
+
+    void removeJob(RemoveJobServiceRequest request);
 }
