@@ -14,10 +14,8 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok:$lombokVersion")
 
     api("org.mapstruct:mapstruct:$mapstructVersion")
-    annotationProcessor("org.mapstruct:mapstruct-processor:$mapstructVersion")
 
-    api("jakarta.annotation:jakarta.annotation-api:2.1.1")
-    api("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
+    api("jakarta.validation:jakarta.validation-api:3.0.2")
     runtimeOnly("com.mysql:mysql-connector-j")
 
     testImplementation("org.junit.jupiter:junit-jupiter:5.10.2")

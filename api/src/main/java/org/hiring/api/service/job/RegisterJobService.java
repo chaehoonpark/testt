@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class RegisterJobService implements RegisterJobUseCase {
 
-    private final JobMapper jobMapper;
     private final JobRepository jobRepository;
     private final CompanyRepository companyRepository;
 
