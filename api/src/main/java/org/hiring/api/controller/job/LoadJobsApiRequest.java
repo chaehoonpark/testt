@@ -1,4 +1,4 @@
-package org.hiring.api.controller;
+package org.hiring.api.controller.job;
 
 import jakarta.validation.constraints.NotNull;
 import org.hiring.api.entity.enums.CityEnum;

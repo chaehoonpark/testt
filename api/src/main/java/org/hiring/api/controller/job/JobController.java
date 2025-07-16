@@ -1,4 +1,4 @@
-package org.hiring.api.controller;
+package org.hiring.api.controller.job;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
