@@ -1,9 +1,11 @@
 package config;
 
+import com.navercorp.fixturemonkey.ArbitraryBuilder;
 import com.navercorp.fixturemonkey.FixtureMonkey;
 import com.navercorp.fixturemonkey.api.introspector.FieldReflectionArbitraryIntrospector;
 import com.navercorp.fixturemonkey.jakarta.validation.plugin.JakartaValidationPlugin;
 import java.util.List;
+import java.util.function.Consumer;
 
 public class FixtureMonkeyProvider {
 
@@ -23,5 +25,11 @@ public class FixtureMonkeyProvider {
     // 여러 객체 생성
     public static <T> List<T> giveMe(Class<T> clazz, int size) {
         return INSTANCE.giveMe(clazz, size);
+    }
+
+    public static <T> T giveMe(Class<T> clazz, Consumer<ArbitraryBuilder<T>> consumer) {
+        ArbitraryBuilder<T> builder = INSTANCE.giveMeBuilder(clazz);
+        consumer.accept(builder);
+        return builder.sample();
     }
 }
