@@ -8,5 +8,5 @@ import org.hiring.api.service.company.LoadCompanyServiceRequest;
 
 public interface LoadCompanyUseCase {
     PagedResult<Company> loadCompanies(LoadCompaniesServiceRequest request);
-    Company loadCompany(LoadCompanyServiceRequest request);
+    Company loadCompany(Long companyId);
 }

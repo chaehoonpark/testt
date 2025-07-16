@@ -2,7 +2,7 @@ package org.hiring.api.service.job;
 
 import lombok.RequiredArgsConstructor;
 import org.hiring.api.entity.JobJpaEntity;
-import org.hiring.api.repository.JobRepository;
+import org.hiring.api.repository.job.JobRepository;
 import org.hiring.api.service.job.usecase.RemoveJobUseCase;
 import org.springframework.stereotype.Service;
 

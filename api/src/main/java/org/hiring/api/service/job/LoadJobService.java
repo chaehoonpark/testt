@@ -6,9 +6,9 @@ import org.example.PagedResult;
 import org.hiring.api.domain.Job;
 import org.hiring.api.entity.JobJpaEntity;
 import org.hiring.api.mapper.JobMapper;
-import org.hiring.api.repository.JobRepository;
-import org.hiring.api.repository.query.JobQueryRepository;
-import org.hiring.api.repository.query.JobSearchCondition;
+import org.hiring.api.repository.job.JobRepository;
+import org.hiring.api.repository.job.query.JobQueryRepository;
+import org.hiring.api.repository.job.query.JobSearchCondition;
 import org.hiring.api.service.job.usecase.LoadJobUseCase;
 import org.springframework.stereotype.Service;
 

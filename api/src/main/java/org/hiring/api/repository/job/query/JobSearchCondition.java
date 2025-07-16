@@ -1,4 +1,4 @@
-package org.hiring.api.repository.query;
+package org.hiring.api.repository.job.query;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -12,6 +12,7 @@ import org.hiring.api.entity.enums.EmploymentType;
 @Builder
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class JobSearchCondition {
+
     private final String keyword;
     private final CityEnum city;
     private final DistrictEnum district;

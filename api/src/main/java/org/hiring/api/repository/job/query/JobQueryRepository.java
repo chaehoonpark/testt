@@ -1,4 +1,4 @@
-package org.hiring.api.repository.query;
+package org.hiring.api.repository.job.query;
 
 import java.util.List;
 import org.hiring.api.entity.JobJpaEntity;

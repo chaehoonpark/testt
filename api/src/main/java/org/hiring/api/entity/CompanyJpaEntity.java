@@ -28,33 +28,32 @@ import org.example.entity.BaseTimeEntity;
 public class CompanyJpaEntity extends BaseTimeEntity {
 
     @Id
-    @Column(name = "company_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name", nullable = false, length = 100)
+    @Column(nullable = false, length = 100)
     private String name;
 
-    @Column(name = "industry", nullable = false, length = 100)
+    @Column(nullable = false, length = 100)
     private String industry;
 
     @Lob
-    @Column(name = "description", nullable = false)
+    @Column
     private String description;
 
-    @Column(name = "employee_count", nullable = false)
+    @Column()
     private String employeeCount;
 
-    @Column(name = "founded_year", nullable = false)
+    @Column()
     private Integer foundedYear;
 
-    @Column(name = "logo_url", length = 255, nullable = false)
+    @Column(length = 200)
     private String logoUrl;
 
-    @Column(name = "website_url", length = 255, nullable = false)
+    @Column(length = 200)
     private String websiteUrl;
 
-    @Column(name = "address", length = 255, nullable = false)
+    @Column(length = 200, nullable = false)
     private String address;
 
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -71,5 +70,16 @@ public class CompanyJpaEntity extends BaseTimeEntity {
         this.websiteUrl = websiteUrl;
         this.address = address;
         this.jobJpaEntities = jobJpaEntities;
+    }
+
+    public void modifyCompany(String name, String industry, String description, String employeeCount, Integer foundedYear, String logoUrl, String websiteUrl, String address) {
+        this.name = name;
+        this.industry = industry;
+        this.description = description;
+        this.employeeCount = employeeCount;
+        this.foundedYear = foundedYear;
+        this.logoUrl = logoUrl;
+        this.websiteUrl = websiteUrl;
+        this.address = address;
     }
 }

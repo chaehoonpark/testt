@@ -1,9 +1,8 @@
-package org.hiring.api.repository.query;
+package org.hiring.api.repository.job.query;
 
 import static org.hiring.api.entity.QCompanyJpaEntity.companyJpaEntity;
 import static org.hiring.api.entity.QJobJpaEntity.jobJpaEntity;
 
-import com.querydsl.core.types.Predicate;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import java.util.List;

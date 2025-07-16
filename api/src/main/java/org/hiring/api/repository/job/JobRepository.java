@@ -1,4 +1,4 @@
-package org.hiring.api.repository;
+package org.hiring.api.repository.job;
 
 import org.hiring.api.entity.JobJpaEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

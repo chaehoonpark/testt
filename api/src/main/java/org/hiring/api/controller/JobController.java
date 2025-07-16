@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/jobs")
+@RequestMapping("/api/v1/jobs")
 public class JobController {
 
     private final RegisterJobUseCase registerJobUseCase;
