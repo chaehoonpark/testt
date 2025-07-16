@@ -5,7 +5,7 @@ import org.hiring.api.entity.JobJpaEntity;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
-public interface JobPostingMapper {
+public interface JobMapper {
 
     Job toModel(JobJpaEntity entity);
 }

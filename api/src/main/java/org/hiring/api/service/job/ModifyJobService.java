@@ -1,12 +1,36 @@
 package org.hiring.api.service.job;
 
-import org.hiring.api.domain.Job;
+import jakarta.persistence.EntityNotFoundException;
+import lombok.RequiredArgsConstructor;
+import org.hiring.api.repository.JobRepository;
 import org.hiring.api.service.job.usecase.ModifyJobUseCase;
+import org.springframework.stereotype.Service;
 
+@Service
+@RequiredArgsConstructor
 public class ModifyJobService implements ModifyJobUseCase {
+
+    private final JobRepository jobRepository;
 
     @Override
     public void modifyJob(ModifyJobServiceRequest request) {
+        final var jobJpaEntity = jobRepository.findById(request.jobId())
+            .orElseThrow(() -> new EntityNotFoundException("Job not found with ID: " + request.jobId()));
 
+        jobJpaEntity.updateInfo(
+            request.title(),
+            request.description(),
+            request.city(),
+            request.district(),
+            request.employmentType(),
+            request.experienceLevel(),
+            request.educationLevel(),
+            request.salaryMin(),
+            request.salaryMax(),
+            request.postedAt(),
+            request.deadline(),
+            request.requirements(),
+            request.benefits()
+        );
     }
 }

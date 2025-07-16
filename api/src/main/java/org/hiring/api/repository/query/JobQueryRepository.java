@@ -6,4 +6,5 @@ import org.hiring.api.entity.JobJpaEntity;
 public interface JobQueryRepository {
 
     List<JobJpaEntity> loadJobs(JobSearchCondition condition);
+    long countJobs(JobSearchCondition condition);
 }

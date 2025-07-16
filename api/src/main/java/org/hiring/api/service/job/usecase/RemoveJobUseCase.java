@@ -4,5 +4,5 @@ import org.hiring.api.service.job.RemoveJobServiceRequest;
 
 public interface RemoveJobUseCase {
 
-    void removeJob(RemoveJobServiceRequest request);
+    void removeJob(Long jobid);
 }

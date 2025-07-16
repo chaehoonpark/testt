@@ -7,6 +7,7 @@ import com.querydsl.core.types.Predicate;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import java.util.List;
+import java.util.Objects;
 import lombok.RequiredArgsConstructor;
 import org.hiring.api.entity.JobJpaEntity;
 import org.hiring.api.entity.enums.CityEnum;
@@ -36,6 +37,24 @@ public class JobQueryRepositoryImpl implements JobQueryRepository {
             .offset(condition.getOffset())
             .limit(condition.getLimit())
             .fetch();
+    }
+
+    @Override
+    public long countJobs(JobSearchCondition condition) {
+        final var count = queryFactory
+            .select(jobJpaEntity.count())
+            .from(jobJpaEntity)
+            .leftJoin(jobJpaEntity.company, companyJpaEntity)
+            .fetchJoin()
+            .where(
+                keywordContains(condition.getKeyword()),
+                cityEquals(condition.getCity()),
+                districtEquals(condition.getDistrict()),
+                employmentEquals(condition.getEmploymentType())
+            )
+            .fetchOne();
+
+        return Objects.isNull(count) ? 0 : count;
     }
 
     private BooleanExpression keywordContains(String keyword) {
