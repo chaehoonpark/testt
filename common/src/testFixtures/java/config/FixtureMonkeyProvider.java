@@ -1,11 +1,15 @@
 package config;
 
 import com.navercorp.fixturemonkey.FixtureMonkey;
+import com.navercorp.fixturemonkey.api.introspector.FieldReflectionArbitraryIntrospector;
+import com.navercorp.fixturemonkey.jakarta.validation.plugin.JakartaValidationPlugin;
 import java.util.List;
 
 public class FixtureMonkeyProvider {
 
     private static final FixtureMonkey INSTANCE = FixtureMonkey.builder()
+        .objectIntrospector(FieldReflectionArbitraryIntrospector.INSTANCE)
+        .plugin(new JakartaValidationPlugin())
         .defaultNotNull(true)
         .build();
 
