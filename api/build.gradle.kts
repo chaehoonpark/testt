@@ -29,6 +29,7 @@ dependencies {
     annotationProcessor("jakarta.annotation:jakarta.annotation-api")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation(testFixtures(project(":common")))
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
