@@ -39,8 +39,10 @@ dependencies {
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.boot:spring-boot-starter-data-jpa")
-    testImplementation(testFixtures(project(":common")))
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
+    // fixture-monkey
+    testImplementation("com.navercorp.fixturemonkey:fixture-monkey-starter:1.0.17")
 }
 
 // 컴파일 시 QueryDSL 클래스를 생성하도록 작업 설정

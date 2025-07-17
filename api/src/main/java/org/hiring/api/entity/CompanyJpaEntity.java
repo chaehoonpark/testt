@@ -57,10 +57,10 @@ public class CompanyJpaEntity extends org.example.entity.BaseTimeEntity {
     private String address;
 
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<JobJpaEntity> jobJpaEntities = new ArrayList<>();
+    private List<JobJpaEntity> jobs = new ArrayList<>();
 
     @Builder
-    public CompanyJpaEntity(String name, String industry, String description, String employeeCount, Integer foundedYear, String logoUrl, String websiteUrl, String address, List<JobJpaEntity> jobJpaEntities) {
+    public CompanyJpaEntity(String name, String industry, String description, String employeeCount, Integer foundedYear, String logoUrl, String websiteUrl, String address, List<JobJpaEntity> jobs) {
         this.name = name;
         this.industry = industry;
         this.description = description;
@@ -69,7 +69,7 @@ public class CompanyJpaEntity extends org.example.entity.BaseTimeEntity {
         this.logoUrl = logoUrl;
         this.websiteUrl = websiteUrl;
         this.address = address;
-        this.jobJpaEntities = jobJpaEntities;
+        this.jobs = jobs;
     }
 
     public void modifyCompany(String name, String industry, String description, String employeeCount, Integer foundedYear, String logoUrl, String websiteUrl, String address) {

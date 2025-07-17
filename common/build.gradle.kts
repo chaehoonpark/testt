@@ -2,7 +2,6 @@
 
 plugins {
     `java-library`
-    id("java-test-fixtures")
 }
 
 val mapstructVersion = "1.5.5.Final"
@@ -16,5 +15,4 @@ dependencies {
 
     api("jakarta.validation:jakarta.validation-api:3.0.2")
 
-    testFixturesImplementation("com.navercorp.fixturemonkey:fixture-monkey-starter:1.0.17")
 }
