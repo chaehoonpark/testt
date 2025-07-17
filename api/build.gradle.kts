@@ -29,6 +29,7 @@ dependencies {
     annotationProcessor("jakarta.annotation:jakarta.annotation-api")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.springframework.boot:spring-boot-starter-data-jpa")
     testImplementation(testFixtures(project(":common")))
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
@@ -47,7 +48,7 @@ tasks.withType<Test> {
     useJUnitPlatform()
 }
 
-tasks.register("prepareKotlinBuildScriptModel"){}
+tasks.register("prepareKotlinBuildScriptModel") {}
 
 // 이 모듈만 실행 가능한 jar로 만듭니다.
 tasks.bootJar { enabled = true }

@@ -27,6 +27,6 @@ import org.springframework.context.annotation.Import;
     RemoveJobService.class,
     JobMapper.class
 })
-public class AbstractServiceTest extends AbstractJpaTest{
+public abstract class AbstractServiceTest extends AbstractJpaTest{
 
 }

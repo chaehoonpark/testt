@@ -1,8 +1,11 @@
 package org.hiring.api.common;
 
+import com.querydsl.jpa.impl.JPAQueryFactory;
 import org.example.config.JpaAuditConfig;
 import org.example.config.QueryDslConfig;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.ActiveProfiles;
 
@@ -10,5 +13,11 @@ import org.springframework.test.context.ActiveProfiles;
 @ActiveProfiles("test")
 @Import({JpaAuditConfig.class, QueryDslConfig.class})
 public abstract class AbstractJpaTest {
+
+    @Autowired
+    protected TestEntityManager em;
+
+    @Autowired
+    protected JPAQueryFactory queryFactory;
 
 }
