@@ -9,6 +9,14 @@ plugins {
 val querydslDir = "build/generated/querydsl"
 val mapstructVersion = "1.5.5.Final"
 
+sourceSets {
+    main {
+        java {
+            srcDir(querydslDir)
+        }
+    }
+}
+
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation(project(":common"))
@@ -21,6 +29,7 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok:$lombokVersion")
 
     // mapstruct annotation processor
+    implementation("org.mapstruct:mapstruct:1.5.5.Final")
     annotationProcessor("org.mapstruct:mapstruct-processor:$mapstructVersion")
 
     // Q-Type 생성을 위한 어노테이션 프로세서 설정 (가장 중요)

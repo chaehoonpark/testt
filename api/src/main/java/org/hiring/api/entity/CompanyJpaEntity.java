@@ -3,37 +3,30 @@ package org.hiring.api.entity;
 import static lombok.AccessLevel.PRIVATE;
 import static lombok.AccessLevel.PROTECTED;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Lob;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
 import java.util.ArrayList;
 import java.util.List;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import org.example.entity.BaseTimeEntity;
+import lombok.*;
 
 @Entity
 @Getter
 @Table(name = "company")
 @NoArgsConstructor(access = PROTECTED)
 @AllArgsConstructor(access = PRIVATE)
-public class CompanyJpaEntity extends BaseTimeEntity {
+public class CompanyJpaEntity extends org.example.entity.BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank
+    @Size(max = 100)
     @Column(nullable = false, length = 100)
     private String name;
 
+    @NotBlank
+    @Size(max = 100)
     @Column(nullable = false, length = 100)
     private String industry;
 
@@ -41,18 +34,25 @@ public class CompanyJpaEntity extends BaseTimeEntity {
     @Column
     private String description;
 
-    @Column()
+    @Size(max = 50)
+    @Column
     private String employeeCount;
 
-    @Column()
+    @Max(2500)
+    @NotNull
+    @Column
     private Integer foundedYear;
 
+    @Size(max = 200)
     @Column(length = 200)
     private String logoUrl;
 
+    @Size(max = 200)
     @Column(length = 200)
     private String websiteUrl;
 
+    @NotBlank
+    @Size(max = 200)
     @Column(length = 200, nullable = false)
     private String address;
 
